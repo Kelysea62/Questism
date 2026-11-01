@@ -1,3 +1,5 @@
+The copy-and-paste library.txt, input.txt, context.txt and output.txt panes, including sample library.txt files, are also protected from inspector export overwrite. Other report destinations remain usable.
+
 # Structural prerequisite inspection
 
 v0.1.24 protects every distributed JavaScript/CJS source, including configured Libraries and setup, and authored pack/validation inputs from export overwrite. Both JSON and DOT destinations are checked before either write, using path, realpath and file identity. Generated report destinations remain replaceable. Keep source files as inputs and use separate report filenames.

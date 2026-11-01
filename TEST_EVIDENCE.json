@@ -60,5 +60,27 @@
     "privateAccountReferencesExcluded": true,
     "fullHistoricalArchiveIncluded": false,
     "note": "The 1207-check gate is the recorded complete development release; npm test here runs the focused seven-check suite."
+  },
+  "textInstallPanesSHA256": {
+    "library.txt": "018ef4310e7b89bcf62530b4e758662d7775bb622320cf8fa45b92d67ad33289",
+    "input.txt": "919212570fe3eb694587a4234efd65610594194f770888a1375dc34c4dcffc01",
+    "context.txt": "ddd1940b23630f4c6c5e28e45b838a9d8431913210ed1174e4767848d36572b5",
+    "output.txt": "ef28cbbc2b3351aa88400b28860b3e764fae3fa6a8dc8f23c1c6d32b2af5de3e",
+    "another_chance_opening/library.txt": "e7f2184b25fd9a6b0334caaa15ce3a24e06a7b97b8fdd341940ada16dca07ad9",
+    "another_chance_conditions/library.txt": "7d2519ac16f7025122ca1b7b73392154f9ad8660a7be93efadf517f70f225e48",
+    "objective_choices/library.txt": "21f48fbf0a7ad4482ac5f31ccd0b4bfe5ff3df00c92086c12973d398456b3387",
+    "branching_dependencies/library.txt": "36e7277e1a5f2c7b3d00a31ce964a78783d411bbddd1f5a031a3887ae5bb3ef0",
+    "exclusive_routes/library.txt": "101c83bf32f877400ecf4dda0ca5d9c1d317351b848a0712f2840aa1016f60e6",
+    "another_chance_five_stop/library.txt": "2eecdce813845048250ea3e59f3cda1636de682fa139e6e4e498b13842cc5708"
+  },
+  "textDistributionVerification": {
+    "identicalToJavaScriptSources": 10,
+    "textPanesParseAsJavaScript": 10,
+    "protectedInspectorDestinations": 10,
+    "ordinaryTextAndDotReportExportsPassed": true,
+    "blockedCompanionOutputWroteNothing": true,
+    "runtimeUnchanged": true,
+    "focusedHookChecksPassed": 7,
+    "method": "Byte comparisons, syntax parsing, real creator-tool CLI calls and existing local hook regressions; no new native playthrough."
   }
 }

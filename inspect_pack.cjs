@@ -71,13 +71,13 @@ function main(args) {
     outputs[args[i]] = path.resolve(args[i + 1]);
   }
   const destinations = Object.values(outputs);
-  // Include configured panes, setup, packs and test/helper sources. Generated
+  // Include text install panes, configured panes, setup, packs and test/helper sources. Generated
   // JSON/DOT reports remain replaceable; source aliases never do.
   const sourceFiles = directory => fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
     if (entry.name.startsWith(".") || entry.name === "node_modules") return [];
     const file = path.join(directory, entry.name);
     if (entry.isDirectory()) return sourceFiles(file);
-    return /\.(?:js|cjs)$/.test(entry.name) || ["quest_pack.json", "demo_quest_pack.json", "scenario_setup.json", "validation_cases.json"].includes(entry.name) ? [file] : [];
+    return /\.(?:js|cjs)$/.test(entry.name) || /^(?:library|input|context|output)\.txt$/.test(entry.name) || ["quest_pack.json", "demo_quest_pack.json", "scenario_setup.json", "validation_cases.json"].includes(entry.name) ? [file] : [];
   });
   const protectedFiles = [input, ...sourceFiles(ROOT)];
   if (destinations.some(p => protectedFiles.some(f => sameFile(p, f))) || destinations.some((p, i) => destinations.slice(0, i).some(q => sameFile(p, q)))) throw new Error("Input, bundled source and output files must be distinct; input and source are read-only.");

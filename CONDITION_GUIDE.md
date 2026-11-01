@@ -36,7 +36,7 @@ Every owned quest card has a reserved ID trigger. Its ordinary title and charact
 
 ## Install a configured sample
 
-For the new opening/conditions example, use `another_chance_conditions/library.js` in Library, together with root `input.js`, `context.js` and `output.js`. Save all four panes and start a fresh private Adventure. Its README explains the sample gates and optional household route seeds. The separate `another_chance_opening` folder retains the earlier three-quest outline fixture.
+For the new opening/conditions example, use `another_chance_conditions/library.txt` in Library, together with root `input.txt`, `context.txt` and `output.txt`. Save all four panes and start a fresh private Adventure. Its README explains the sample gates and optional household route seeds. The separate `another_chance_opening` folder retains the earlier three-quest outline fixture.
 
 Use the configured Library instead of the generic empty-preset Library. Do not paste a second `QUESTISM_PRESETS` declaration. Keep Raw Model Output enabled for the previously tested reporting configuration. No extra model call or external quest service is used.
 

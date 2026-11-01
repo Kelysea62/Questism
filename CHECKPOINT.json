@@ -20,5 +20,7 @@
   "nextAction": "Fresh native detour/return and full automatic-path acceptance on v0.1.29. Keep the v0.1.28 live-tested baseline and do not claim model obedience from supplied-report tests.",
   "aiDungeonListingPublished": false,
   "sourceDistribution": "GitHub public beta candidate",
-  "remainingCreatorFeature": "Dedicated scenario Creator Setup card with validated once-per-fresh-adventure bootstrap is not implemented."
+  "remainingCreatorFeature": "Dedicated scenario Creator Setup card with validated once-per-fresh-adventure bootstrap is not implemented.",
+  "installFormat": "Plain-text .txt panes copied byte-for-byte from JavaScript source",
+  "buildTextPanes": "npm run build:samples"
 }

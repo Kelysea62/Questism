@@ -2,7 +2,7 @@
 
 The current integration sample: breakfast, school, a separately delivered and accepted NPC offer, departure, five required destinations, an explicit ending, and a dependent return quest. The v0.1.28 predecessor of this profile was used in the native Gemma acceptance run; v0.1.29 has not been rerun live.
 
-Install this folder's library.js with the root input.js, context.js and output.js. Save all four panes and start a fresh adventure. Do not paste setup.js a second time: it is already included in the configured Library.
+Install this folder's library.txt with the root input.txt, context.txt and output.txt. Save all four panes and start a fresh adventure. Do not paste setup.js a second time: it is already included in the configured Library.
 
 Another Chance samples share quest IDs. Choose one per fresh adventure. A configured quest pack does not supply an entire fictional setting: retain the scenario opening, characters and player-sovereignty instructions, and apply its scenario_patch.txt where provided. Route permission flags never establish attraction, consent or relationship success.
 

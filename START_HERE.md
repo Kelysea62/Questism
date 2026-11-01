@@ -1,6 +1,8 @@
 # Questism v0.1.29 beta candidate
 
-Install root library.js for an empty reusable engine, or one configured sample's library.js. Pair it with root input.js, context.js and output.js in the matching AI Dungeon panes. Save all four. Configured Libraries already contain their setup; do not paste setup declarations twice. Use a fresh adventure for changed preset definitions. Another Chance samples share IDs: choose one.
+Install root library.txt for an empty reusable engine, or one configured sample's library.txt. Pair it with root input.txt, context.txt and output.txt in the matching AI Dungeon panes. Save all four. Configured Libraries already contain their setup; do not paste setup declarations twice. Use a fresh adventure for changed preset definitions. Another Chance samples share IDs: choose one.
+
+The `.txt` install panes are exact copies of the tested JavaScript source. Copy the entire file into its pane; there is no wrapper to remove. The `.js` files remain build/test sources.
 
 Turn **Optimized Context OFF** and **Raw Model Output ON**. The generic engine starts without quests; place an authored {"quests":[...]} pack in Control Panel Notes, then run /quest validate and /quest import. Generated quests start off.
 

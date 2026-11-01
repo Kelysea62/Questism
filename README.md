@@ -1,17 +1,27 @@
 # Questism
 
-A reusable quest engine for AI Dungeon. The root `library.js`, `input.js`, `context.js` and `output.js` are the generic script. They contain no Another Chance quest pack, NPC roster or scenario policy.
+A reusable quest engine for AI Dungeon. Use the root plain-text install panes: [library.txt](library.txt), [input.txt](input.txt), [context.txt](context.txt) and [output.txt](output.txt). They contain no Another Chance quest pack, NPC roster or scenario policy.
 
 **Current version: v0.1.29 beta candidate.** Quests are voluntary, including tracked or automatically assigned quests. Required objectives describe completion criteria, not an obligation to pursue a quest. Model interpretation remains fallible.
 
 ## Install the generic engine
 
-1. Copy the four root files into the matching AI Dungeon Library, Input, Context and Output panes, or use the corresponding generic script distribution.
+1. Open each root `.txt` file and copy its full contents into the matching AI Dungeon script pane:
+
+   | AI Dungeon pane | Copy from |
+   | --- | --- |
+   | Library | [library.txt](library.txt) |
+   | Input | [input.txt](input.txt) |
+   | Context | [context.txt](context.txt) |
+   | Output | [output.txt](output.txt) |
+
 2. Save all four and enable the script. Turn **Optimized Context OFF** and **Raw Model Output ON**.
 3. Start a fresh test adventure. Questism creates its Control Panel card when the hooks initialize.
 4. Add your authored `{"quests":[...]}` JSON to the Control Panel card's Notes. Run `/quest validate`, then `/quest import`. The root engine starts without quests, and AI-created quests are off by default.
 
 Read [START_HERE.md](START_HERE.md), [GUIDE.md](GUIDE.md) and [KNOWN_LIMITS.md](KNOWN_LIMITS.md). Settings include independent Off/Suggest/Auto choices for quest generation and progression, optional completion review, headers and quest interludes.
+
+The `.txt` panes contain the same JavaScript bytes as their `.js` source files, with no explanatory wrapper to remove. JavaScript files remain the source used by builds and tests. `npm run build:samples` refreshes all four root text panes and the six configured text Libraries together.
 
 ## Features
 
@@ -28,7 +38,7 @@ Rewards are descriptive. Questism does not manage inventory, currency, stats or 
 
 ## Separate example packs
 
-Each folder's `library.js` includes that example's setup and quests. Use it instead of the root Library, paired with the three root hooks. Do not paste setup declarations twice.
+Each folder's `library.txt` includes that example's setup and quests. Use it instead of the root `library.txt`, paired with root `input.txt`, `context.txt` and `output.txt`. Do not paste setup declarations twice.
 
 | Folder | Example |
 | --- | --- |

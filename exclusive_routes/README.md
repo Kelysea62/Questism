@@ -2,7 +2,7 @@
 
 A generic exhibit example with competing authored routes. Explicit player acceptance commits a route; an offer alone does not.
 
-Install this folder's library.js with the root input.js, context.js and output.js. Save all four panes and start a fresh adventure. Do not paste setup.js a second time: it is already included in the configured Library.
+Install this folder's library.txt with the root input.txt, context.txt and output.txt. Save all four panes and start a fresh adventure. Do not paste setup.js a second time: it is already included in the configured Library.
 
 ## Included quests
 
