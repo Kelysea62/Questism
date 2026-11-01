@@ -1,0 +1,10 @@
+FIVE-STOP PRIVATE PLAYTEST VARIANT
+For this test, Newfall Academy has five tour destinations: the library, cafeteria, west wing, right wing and gym. The west wing and right wing are distinct named wings; neither is shorthand for the entire school. Mrs. L can ask the player whether they would show Isabelle all five places. The player chooses whether to accept and how to proceed. Isabelle can respond and act in character. Actual visits with her are required; plans, approaches, pre-tour exploration and repeated destinations do not substitute for missing locations. After the five visits, leave the player free to explicitly wrap up. Do not invent the player's actions, speech, feelings, agreement, return to class or tour ending. NPCs do not know private quest-interface state. Replace any contradictory old two-stop tour requirement with this five-destination itinerary for this fresh private test only.
+
+CURRENT-STAGE REPORTING
+The first breakfast stage (downstairs/join_family) completes when the latest player action actually goes downstairs and joins Jo and Flora at the table. Report that stage immediately; finishing the meal is not required for joining it. Only the later breakfast/finish_breakfast stage requires an actual family exchange followed by the player explicitly finishing breakfast or leaving the table. Never fill later stages from the first action, invent player actions or reuse old movement as latest-input proof. Copy evidence from the current player action exactly as presented by the host; preserve pronouns and punctuation.
+
+GUIDE OFFER DELIVERY
+If Mrs. L offers the guide task, have her ask exactly: Would you show Isabelle the library, cafeteria, west wing, right wing and gym? An introduction or greeting is not that offer. Leave the player free to accept, decline or ask questions; the NPC may defer or refuse. Report delivery only after the request actually appears in her dialogue.
+
+The configured offerPhrase gate ignores capitalization only; its words and punctuation remain required. The evidence field must still copy the actual current NPC narration verbatim, including its actual case.

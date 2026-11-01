@@ -1,0 +1,280 @@
+{
+  "quests": [
+    {
+      "id": "ac_breakfast_again",
+      "title": "Breakfast, Again",
+      "description": "You have awakened ten years in the past. Go downstairs and spend breakfast with your family. Allow the conversation to happen before choosing to end the meal.",
+      "autoStart": true,
+      "requires": [],
+      "stages": [
+        {
+          "id": "downstairs",
+          "title": "Downstairs for breakfast",
+          "description": "The latest player action must actually bring the player downstairs to join the family. Planning, calling from upstairs, or narrator-written movement does not count.",
+          "objectives": [
+            {
+              "id": "join_family",
+              "text": "Go downstairs and join your family for breakfast.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "breakfast",
+          "title": "A familiar morning",
+          "description": "Have a real family exchange, then wait for the player to choose to finish breakfast or leave the table. A greeting, a question, a plan, or the narrator ending the meal is insufficient.",
+          "objectives": [
+            {
+              "id": "finish_breakfast",
+              "text": "Speak with your family over breakfast, then choose to finish the meal and leave breakfast.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_back_to_school",
+      "title": "Back to School",
+      "description": "Return to Newfall Academy, explore a school area, and attend Mrs. L's homeroom. Each step needs its own observed result.",
+      "autoStart": true,
+      "requires": [
+        "ac_breakfast_again"
+      ],
+      "stages": [
+        {
+          "id": "arrival",
+          "title": "Back through the gates",
+          "description": "Require actual arrival; leaving home or saying you will attend is insufficient.",
+          "objectives": [
+            {
+              "id": "reach_school",
+              "text": "Return to Newfall Academy.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "explore",
+          "title": "Look around",
+          "description": "Actually explore at least one established school area. Merely passing through the entrance does not count.",
+          "objectives": [
+            {
+              "id": "explore_school",
+              "text": "Explore a school area before homeroom.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "homeroom",
+          "title": "Homeroom with Mrs. L",
+          "description": "The player must actually enter and join Mrs. L's homeroom. This milestone permits a guide offer in a later eligible response; it does not invent an introduction or acceptance.",
+          "objectives": [
+            {
+              "id": "attend_homeroom",
+              "text": "Head to homeroom and join Mrs. L's class.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "introduction",
+          "title": "Meet the new student",
+          "description": "Mrs. L or Isabelle must actually introduce Isabelle as the new student during the accepted scene. Seeing an unnamed person, anticipating an introduction, or reading a quest header does not count.",
+          "objectives": [
+            {
+              "id": "meet_isabelle",
+              "text": "Hear Isabelle introduced as the new student in homeroom.",
+              "target": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_isabelle_first_day",
+      "title": "Isabelle's First Day",
+      "description": "Mrs. L has asked you to show Isabelle around Newfall Academy. Accepting the request does not complete the tour; the tour has separate start, area-visit, and finish stages.",
+      "requires": [],
+      "conditions": [
+        {
+          "quest": "ac_back_to_school",
+          "stage": "homeroom"
+        },
+        {
+          "location": "homeroom"
+        }
+      ],
+      "giver": {
+        "id": "mrs_l",
+        "name": "Mrs. L",
+        "instruction": "In homeroom, introduce Isabelle as the new student if that has not already happened, then ask the player whether they would show her around Newfall Academy. The request must actually appear in Mrs. L's dialogue. Leave the player's answer open. Do not repeat an introduction or invent agreement, movement, attraction, or a completed tour."
+      },
+      "stages": [
+        {
+          "id": "start_tour",
+          "title": "Set out together",
+          "description": "After accepting Mrs. L's request, wait for the player to actually begin showing Isabelle around. A promise alone or narrator-written departure does not count.",
+          "objectives": [
+            {
+              "id": "begin_tour",
+              "text": "Begin showing Isabelle around the school with her accompanying you.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "show_areas",
+          "title": "Show Isabelle two areas",
+          "description": "Visit two distinct school areas with Isabelle accompanying the player. Count one newly visited area per separate player action. Naming destinations, approaching an area, or revisiting the same area does not count. This stage records the visits only; it never finishes the tour.",
+          "objectives": [
+            {
+              "id": "visit_area",
+              "text": "Visit a new, distinct school area with Isabelle present during the tour. Each count requires a separate player action that reaches a different area; do not count plans, approaches, repeated areas, or narrator-written movement.",
+              "target": 2,
+              "evidenceSource": "player",
+              "maxPerAction": 1,
+              "distinctItems": [
+                "courtyard",
+                "library",
+                "student_lounge",
+                "classroom_wing",
+                "main_building"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "finish_tour",
+          "title": "Finish the tour",
+          "description": "After two distinct areas have been visited, wait for the player to actually end or wrap up the tour with Isabelle. Continuing toward another place, walking, or starting a conversation does not finish it.",
+          "objectives": [
+            {
+              "id": "end_tour",
+              "text": "End the tour with Isabelle after showing her at least two distinct school areas.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_jo_open_conversation",
+      "title": "A Conversation with Jo",
+      "description": "Jo has offered some time for a personal conversation at home. This is an opportunity to talk; it does not establish romantic interest or a relationship outcome.",
+      "requires": [
+        "ac_breakfast_again"
+      ],
+      "conditions": [
+        {
+          "flag": "jo_romance_enabled",
+          "equals": true
+        },
+        {
+          "location": "home"
+        },
+        {
+          "time": "evening"
+        }
+      ],
+      "giver": {
+        "id": "jo",
+        "name": "Jo",
+        "instruction": "If the established evening scene leaves Jo willing and available, let her offer a quiet personal conversation when convenient. Keep her established personality and boundaries. The invitation is not a confession or proof of attraction. Do not interrupt another unresolved exchange or decide the player's answer; Jo may defer when the scene warrants it."
+      },
+      "stages": [
+        {
+          "id": "talk",
+          "title": "Speak honestly",
+          "description": "Let the player choose what to share and what kind of relationship to seek. A household task, a routine greeting, or a narrator-written confession does not count.",
+          "objectives": [
+            {
+              "id": "speak",
+              "text": "Have the personal conversation with Jo and express what you choose to share.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "response",
+          "title": "Hear her answer",
+          "description": "Jo must actually respond to the personal conversation. A warm response, uncertainty, postponement, or refusal is a valid response. None automatically establishes romance. Preserve any boundary she states.",
+          "setFlags": {
+            "jo_first_conversation_complete": true
+          },
+          "objectives": [
+            {
+              "id": "hear_response",
+              "text": "Hear Jo's own response to the conversation.",
+              "target": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_flora_open_conversation",
+      "title": "A Conversation with Flora",
+      "description": "Flora has offered time for a personal conversation at home. This opens a conversation, not a predetermined romantic result.",
+      "requires": [
+        "ac_breakfast_again"
+      ],
+      "conditions": [
+        {
+          "flag": "flora_romance_enabled",
+          "equals": true
+        },
+        {
+          "location": "home"
+        },
+        {
+          "time": "evening"
+        }
+      ],
+      "giver": {
+        "id": "flora",
+        "name": "Flora",
+        "instruction": "If the established evening scene leaves Flora willing and available, let her offer a personal conversation in her own voice. Preserve her teasing, defensiveness, and actual relationship with the player. Do not turn a casual invitation into proof of attraction or decide the player's answer. She may defer when the scene warrants it."
+      },
+      "stages": [
+        {
+          "id": "talk",
+          "title": "Speak openly",
+          "description": "Let the player decide what to share. Ordinary greetings, chores, or narrator-invented feelings do not count.",
+          "objectives": [
+            {
+              "id": "speak",
+              "text": "Have the personal conversation with Flora and express what you choose to share.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "response",
+          "title": "Hear her answer",
+          "description": "Flora must actually respond. Curiosity, affection, uncertainty, delay, or refusal can all be valid outcomes. Completing the conversation does not declare mutual attraction, remove a boundary, or begin a relationship.",
+          "setFlags": {
+            "flora_first_conversation_complete": true
+          },
+          "objectives": [
+            {
+              "id": "hear_response",
+              "text": "Hear Flora's own response to the conversation.",
+              "target": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "version": "0.1.29",
+  "name": "Optional quest guidance and actual v28 upgrade retention",
+  "sourceSHA256": "018ef4310e7b89bcf62530b4e758662d7775bb622320cf8fa45b92d67ad33289",
+  "baselineSHA256": "fc5c1d4540c4bd46c3516aedd9cb6352739f7bcd34a461618bc87a2acf4f019f",
+  "nativeModelRecognitionTested": false,
+  "total": 7,
+  "passed": 7,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Actual v28 save upgrades help while retaining settings, definitions, records and creator Notes",
+      "passed": true
+    },
+    {
+      "name": "An accepted v28 pending progress response commits once after upgrade and reload",
+      "passed": true
+    },
+    {
+      "name": "Migrated accepted progress retains Undo and source-edit rollback protections",
+      "passed": true
+    },
+    {
+      "name": "Legacy unrelated accepted action leaves a voluntary quest active and unchanged",
+      "passed": true
+    },
+    {
+      "name": "Compact unrelated accepted action leaves a voluntary quest active and unchanged",
+      "passed": true
+    },
+    {
+      "name": "No-input Continue supplies observation and optionality guidance without reusing a prior action",
+      "passed": true
+    },
+    {
+      "name": "A bounded automatic-offer fallback carries voluntary-quest guidance within its budget",
+      "passed": true
+    }
+  ]
+}

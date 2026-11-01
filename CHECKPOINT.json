@@ -1,0 +1,24 @@
+{
+  "version": "0.1.29",
+  "phase": "Optionality patch locally verified; native acceptance pending",
+  "baselineVersion": "0.1.28",
+  "genericSHA256": "018ef4310e7b89bcf62530b4e758662d7775bb622320cf8fa45b92d67ad33289",
+  "changes": [
+    "Voluntary quests in normal/fallback narrator instructions and control help",
+    "Required objectives mean completion criteria, not an obligation",
+    "Existing card help retains settings and creator Notes",
+    "Compatible v0.1.28 saved records, pending acceptance and history protections",
+    "Combined opening stays within prior character footprint"
+  ],
+  "local": {
+    "passed": 1207,
+    "total": 1207,
+    "suites": 48,
+    "filesUnchangedDuringValidation": true
+  },
+  "nativePlaytestRun": false,
+  "nextAction": "Fresh native detour/return and full automatic-path acceptance on v0.1.29. Keep the v0.1.28 live-tested baseline and do not claim model obedience from supplied-report tests.",
+  "aiDungeonListingPublished": false,
+  "sourceDistribution": "GitHub public beta candidate",
+  "remainingCreatorFeature": "Dedicated scenario Creator Setup card with validated once-per-fresh-adventure bootstrap is not implemented."
+}

@@ -1,0 +1,95 @@
+{
+  "quests": [
+    {
+      "id": "dep_service",
+      "title": "Archive Service",
+      "description": "A coordinator may offer sorting work after the appointment has been confirmed. Availability is not an offer, acceptance or completed work.",
+      "requires": [
+        "dep_access"
+      ],
+      "conditions": [
+        {
+          "location": "guild_lobby"
+        }
+      ],
+      "giver": {
+        "id": "coordinator",
+        "name": "Coordinator",
+        "instruction": "If willing, offer the player a task sorting the east and west archive stacks. Leave acceptance and all player actions open. Do not imply either stack is sorted."
+      },
+      "abandonment": "resume",
+      "rewards": "Descriptive only: the coordinator may express thanks. No inventory, money or relationship change is granted by the engine.",
+      "stages": [
+        {
+          "id": "sort",
+          "title": "Sort both archive stacks",
+          "objectives": [
+            {
+              "id": "stacks",
+              "text": "Actually sort the east and west archive stacks into alphabetic order, one stack per separate player action.",
+              "target": 2,
+              "maxPerAction": 1,
+              "distinctItems": [
+                "east_stack",
+                "west_stack"
+              ],
+              "evidenceSource": "player"
+            }
+          ]
+        }
+      ],
+      "category": "side"
+    },
+    {
+      "id": "dep_access",
+      "title": "An Archive Appointment",
+      "description": "The coordinator considers either registration or completed service sufficient for an appointment request. The service route depends on an appointment, so registration is the independent initial route.",
+      "requiresAny": [
+        "dep_service",
+        "dep_intro"
+      ],
+      "conditions": [
+        {
+          "location": "guild_lobby"
+        }
+      ],
+      "giver": {
+        "id": "coordinator",
+        "name": "Coordinator",
+        "instruction": "If willing, offer to arrange an archive appointment. An offer must leave acceptance open and must not claim the appointment is already confirmed. Confirm it only when that actually occurs in the story."
+      },
+      "rewards": "The script records the quest milestone only; access or appointment rights still require an actual character confirmation.",
+      "stages": [
+        {
+          "id": "confirmation",
+          "title": "Hear the confirmation",
+          "objectives": [
+            {
+              "id": "confirm",
+              "text": "Hear the coordinator actually confirm the archive appointment."
+            }
+          ]
+        }
+      ],
+      "category": "faction"
+    },
+    {
+      "id": "dep_intro",
+      "title": "Visitor Registration",
+      "description": "A creator-authored available goal, not a claim that a character has offered anything. Choose whether to pursue registration and wait for an actual confirmation.",
+      "stages": [
+        {
+          "id": "register",
+          "title": "Hear registration confirmed",
+          "objectives": [
+            {
+              "id": "confirm",
+              "text": "Hear the coordinator actually confirm visitor registration."
+            }
+          ]
+        }
+      ],
+      "category": "main"
+    }
+  ]
+}

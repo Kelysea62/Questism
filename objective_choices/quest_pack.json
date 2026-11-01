@@ -1,0 +1,107 @@
+{
+  "quests": [
+    {
+      "id": "choice_archive_entry",
+      "title": "A Way into the Archive",
+      "description": "An original generic example. Seek permission by either method, then choose to enter the reading room. The closing-hours inquiry is optional.",
+      "rewards": "Descriptive only: any permission must be granted by a character in the story. Questism does not grant access, items or currency.",
+      "stages": [
+        {
+          "id": "permission",
+          "title": "Find a permitted way inside",
+          "description": "Either the clerk must actually grant reading-room permission, or an archivist must actually agree to escort you. Asking, planning or assuming consent does not qualify. Learning the closing time is optional and may be left unfinished.",
+          "objectives": [
+            {
+              "id": "clerk_permission",
+              "text": "Hear the clerk explicitly grant permission to enter the reading room.",
+              "alternativeGroup": "permission"
+            },
+            {
+              "id": "archivist_escort",
+              "text": "Hear an archivist explicitly agree to escort you into the reading room.",
+              "alternativeGroup": "permission"
+            },
+            {
+              "id": "closing_hours",
+              "text": "Hear a member of staff state today's closing time.",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "id": "visit",
+          "title": "Choose to enter",
+          "description": "Permission or an escort's agreement does not move the player. Wait for the player's actual action entering the reading room. Do not invent movement to finish the quest.",
+          "objectives": [
+            {
+              "id": "enter_reading_room",
+              "text": "Enter the reading room after permission has been established.",
+              "evidenceSource": "player"
+            }
+          ]
+        }
+      ],
+      "abandonment": "final",
+      "refusal": "final",
+      "category": "main"
+    },
+    {
+      "id": "choice_archive_favor",
+      "title": "The Archivist's Request",
+      "description": "An optional follow-up available only after the visit, when an archivist is present to offer it.",
+      "requires": [
+        "choice_archive_entry"
+      ],
+      "conditions": [
+        {
+          "location": "reading_room"
+        }
+      ],
+      "giver": {
+        "id": "archivist",
+        "name": "Archivist",
+        "instruction": "If willing, ask whether the player would help return a reference volume to the correct shelf. Leave acceptance or refusal to the player. Do not assume the volume has been moved."
+      },
+      "rewards": "The archivist may express thanks. This is a descriptive promise, not a guaranteed relationship or mechanical reward.",
+      "stages": [
+        {
+          "id": "shelve",
+          "title": "Return the volume",
+          "objectives": [
+            {
+              "id": "return_volume",
+              "text": "Place the reference volume on the correct shelf after choosing to help.",
+              "evidenceSource": "player"
+            }
+          ]
+        }
+      ],
+      "abandonment": "resume",
+      "refusal": "reoffer",
+      "category": "side"
+    },
+    {
+      "id": "choice_lobby_help",
+      "title": "The Lobby Ledger",
+      "description": "A separate optional task in the lobby, made available after the archive-entry goal was closed. It grants no reading-room permission and does not complete the declined visit.",
+      "category": "side",
+      "abandonment": "resume",
+      "conditions": [
+        { "quest": "choice_archive_entry", "status": "declined" },
+        { "location": "archive_lobby" }
+      ],
+      "giver": {
+        "id": "clerk",
+        "name": "Clerk",
+        "instruction": "If willing and appropriate in the established scene, offer a small independent task alphabetizing the loose lobby ledger forms. The availability gate is mechanical: do not claim the clerk heard a spoken refusal or knows the player's private thoughts. Do not grant room permission, move the player or decide acceptance. The clerk may defer."
+      },
+      "rewards": "Descriptive only: the clerk may express thanks in the story. The engine records completion, not inventory, money, access or relationships.",
+      "stages": [{
+        "id": "sort",
+        "title": "Alphabetize the forms",
+        "setFlags": { "lobby_forms_sorted": true },
+        "objectives": [{ "id": "forms", "text": "Actually alphabetize the loose lobby ledger forms into the requested order.", "evidenceSource": "player" }]
+      }]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "quests": [
+    {
+      "id": "exhibit_restore",
+      "title": "Preserve the Original",
+      "description": "The curator's restoration plan is one possible commission for this exhibit. Accepting it commits the recorded plan and blocks the alternative working-copy commission. An offer is not acceptance or completed restoration.",
+      "category": "main",
+      "exclusiveGroup": "exhibit_plan",
+      "abandonment": "resume",
+      "conditions": [{ "location": "archive_hall" }],
+      "giver": {
+        "id": "curator",
+        "name": "Curator",
+        "instruction": "If willing, offer the restoration plan: repair the exhibit volume's damaged binding and secure its loose pages. Explain that accepting this commission commits the restoration plan for this exhibit rather than the alternative working-copy commission. Leave the player's answer and all work open. Do not imply permanent faction membership, permission or completed actions."
+      },
+      "rewards": "Descriptive only: the curator may acknowledge the restoration in the story. Questism grants no inventory, currency, membership or access.",
+      "stages": [{
+        "id": "restore",
+        "title": "Restore the exhibit volume",
+        "objectives": [{ "id": "binding", "text": "Actually repair the damaged binding and secure the loose pages of the exhibit volume.", "evidenceSource": "player" }]
+      }]
+    },
+    {
+      "id": "exhibit_copy",
+      "title": "Prepare a Working Copy",
+      "description": "The curator's working-copy plan is an alternative commission for this exhibit. Accepting it commits the recorded plan and blocks the restoration commission. Considering both proposals does not commit either one.",
+      "category": "main",
+      "exclusiveGroup": "exhibit_plan",
+      "abandonment": "resume",
+      "conditions": [{ "location": "archive_hall" }],
+      "giver": {
+        "id": "curator",
+        "name": "Curator",
+        "instruction": "If willing, offer the working-copy plan: transcribe the exhibit passage into a legible working copy. Explain that accepting this commission commits the copy plan for this exhibit rather than the alternative restoration commission. Leave acceptance, movement and the actual transcription to the player. Do not imply that the copy already exists."
+      },
+      "rewards": "Descriptive only: the curator may acknowledge the working copy in the story. Questism grants no inventory, currency, membership or access.",
+      "stages": [{
+        "id": "copy",
+        "title": "Transcribe the passage",
+        "objectives": [{ "id": "passage", "text": "Actually transcribe the exhibit passage into a legible working copy.", "evidenceSource": "player" }]
+      }]
+    },
+    {
+      "id": "exhibit_review",
+      "title": "The Curator's Review",
+      "description": "Either completed commission can lead to a separate offer of a review. Mechanical completion establishes neither praise nor approval; hear the curator's actual response.",
+      "category": "side",
+      "requiresAny": ["exhibit_restore", "exhibit_copy"],
+      "conditions": [{ "location": "archive_hall" }],
+      "giver": { "id": "curator", "name": "Curator", "instruction": "If willing, offer to review the result of the completed commission. The player may accept or ignore that review. Do not supply acceptance or invent a favorable verdict." },
+      "stages": [{
+        "id": "review",
+        "title": "Hear the actual review",
+        "objectives": [{ "id": "response", "text": "Hear the curator actually review the result of the completed exhibit commission; praise, criticism or a mixed response can qualify." }]
+      }]
+    }
+  ]
+}

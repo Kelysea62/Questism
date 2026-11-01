@@ -1,0 +1,143 @@
+{
+  "quests": [
+    {
+      "id": "ac_breakfast_again",
+      "title": "Breakfast, Again",
+      "description": "You have awakened ten years in the past. Your immediate task is to go downstairs and spend breakfast with your family. Let this family scene finish before the school quest begins.",
+      "autoStart": true,
+      "requires": [],
+      "requiresAny": [],
+      "rewards": "",
+      "stages": [
+        {
+          "id": "downstairs",
+          "title": "Downstairs for breakfast",
+          "description": "Complete only when the player actually reaches the downstairs breakfast scene and joins the family. Waking, planning to go, or calling from upstairs is insufficient.",
+          "objectives": [
+            {
+              "id": "join_family",
+              "text": "Go downstairs and join your family for breakfast.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "breakfast",
+          "title": "A familiar morning",
+          "description": "The family breakfast conversation must actually occur. Finish this stage only when the latest player action explicitly chooses to finish the meal, end the conversation, or leave breakfast after talking with the family. Greetings, questions, plans, sitting down, or a narrator-written meal ending do not supply that player choice. Require an exact quote from that latest player action, not AI narration or the tracker header. Do not move the player to school or make them finish breakfast merely to satisfy the quest.",
+          "objectives": [
+            {
+              "id": "finish_breakfast",
+              "text": "Speak with your family over breakfast, then choose to finish the meal and leave breakfast.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_back_to_school",
+      "title": "Back to School",
+      "description": "After breakfast has ended, return to school, look around, and reach homeroom with Mrs. L. These are separate steps; arriving at school does not finish the exploration or homeroom stages.",
+      "autoStart": true,
+      "requires": [
+        "ac_breakfast_again"
+      ],
+      "requiresAny": [],
+      "rewards": "",
+      "stages": [
+        {
+          "id": "arrival",
+          "title": "Back through the gates",
+          "description": "Count actual arrival at school. Leaving home, travelling, or promising to attend is not arrival.",
+          "objectives": [
+            {
+              "id": "reach_school",
+              "text": "Return to school.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "explore",
+          "title": "Look around",
+          "description": "The player must actually explore at least one school area before homeroom. Passing through the entrance or merely stating an intention to explore is insufficient. Use established locations where available; this pack does not define a canonical school map.",
+          "objectives": [
+            {
+              "id": "explore_school",
+              "text": "Explore a school area before homeroom.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        },
+        {
+          "id": "homeroom",
+          "title": "Homeroom with Mrs. L",
+          "description": "Complete when the player enters and joins Mrs. L's homeroom. Waiting outside the classroom does not count. This unlocks Isabelle's introduction; it does not itself establish that she has already been introduced or that a tour has happened.",
+          "objectives": [
+            {
+              "id": "attend_homeroom",
+              "text": "Head to homeroom and join Mrs. L's class.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ac_isabelle_first_day",
+      "title": "Isabelle's First Day",
+      "description": "Isabelle is a new student on her first day. Her introduction in Mrs. L's homeroom leads to the player being assigned as her school tour guide, followed by an actual tour.",
+      "autoStart": true,
+      "requires": [
+        "ac_back_to_school"
+      ],
+      "requiresAny": [],
+      "rewards": "",
+      "stages": [
+        {
+          "id": "introduction",
+          "title": "Meet the new student",
+          "description": "Mrs. L or Isabelle must actually introduce Isabelle as the new student during homeroom. Seeing an unnamed student, reading a name, or expecting an introduction is insufficient.",
+          "objectives": [
+            {
+              "id": "meet_isabelle",
+              "text": "Meet Isabelle when she is introduced as the new student in homeroom.",
+              "target": 1
+            }
+          ]
+        },
+        {
+          "id": "guide_assignment",
+          "title": "The school guide",
+          "description": "Complete when Mrs. L actually asks or appoints the player to show Isabelle around school. This records the teacher's assignment, not invented player dialogue, agreement, feelings, or actions. A refusal must not be rewritten as player acceptance.",
+          "objectives": [
+            {
+              "id": "assigned_guide",
+              "text": "Receive Mrs. L's assignment to show Isabelle around school.",
+              "target": 1
+            }
+          ]
+        },
+        {
+          "id": "tour",
+          "title": "Show Isabelle around",
+          "description": "Complete an actual short tour with Isabelle accompanying the player through at least two distinct school areas. A promise, accepting the assignment, starting to walk, or visiting only one area does not complete the tour. Do not invent named canonical locations or move the player without their action.",
+          "objectives": [
+            {
+              "id": "finish_tour",
+              "text": "Show Isabelle around at least two school areas and finish the tour with her.",
+              "target": 1,
+              "evidenceSource": "player"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

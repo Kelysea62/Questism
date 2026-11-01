@@ -1,0 +1,29 @@
+{
+  "version": "0.1.23",
+  "method": "Local Input/Context/Output hooks with supplied reports; no live model or website",
+  "positiveTraces": [
+    "Explicit acceptance -> hear closing time (optional) -> clerk grants permission -> player enters reading room -> current scene recorded -> archivist offers favor -> player refuses (no acceptance) -> later explicitly accepts -> later shelves volume -> reload",
+    "Explicit acceptance -> archivist agrees to escort -> player waits (no movement/progress) -> player enters reading room -> current scene recorded -> archivist offers favor -> player refuses -> later explicitly accepts -> later shelves volume -> reload",
+    "Accepted favor -> player command abandons -> actual reported departure -> resume blocked -> actual reported return -> explicit resume without a new offer -> later shelving action completes",
+    "Actual favor offer -> explicit decline -> explicit reconsideration -> fresh actual offer -> separate player agreement -> later shelving work -> reload",
+    "Decline the unaccepted archive-entry goal -> lobby task eligible -> actual independent clerk offer -> separate player agreement -> later alphabetizing -> reload; source remains declined with zero work and archivist favor locked",
+    "Accept entry -> actual permission -> player enters reading room -> entry completes; lobby recovery remains locked"
+  ],
+  "negativeCases": [
+    "Optional completion alone cannot complete a stage",
+    "Neither permission nor an escort's agreement moves the player",
+    "Unchosen alternatives remain at their observed counts",
+    "Unfinished optional work cannot be backfilled after advancement",
+    "Partial totals on different alternatives cannot be summed",
+    "A locked or eligible follow-up is not yet offered or accepted",
+    "Refusal leaves the offered favor unaccepted",
+    "Narrator prose cannot prove a player-action objective",
+    "Source edits, Retry and rollback cannot retain discarded progress",
+    "Final abandonment does not finish the visit, grant rewards or unlock the follow-up",
+    "An abandoned quest cannot receive AI progress, failure or AI-authored resumption",
+    "Suggestions discarded at abandonment cannot be revived after resumption",
+    "Interface refusal establishes no spoken dialogue, NPC knowledge, room permission, player movement or source completion",
+    "An eligible recovery task is not offered or accepted; narrative wording without a valid report cannot create status outcomes"
+  ],
+  "categoryCoverage": "Category metadata is display-only; hidden/eligible categories are absent from player views, and creator-only exports may show the full roster."
+}

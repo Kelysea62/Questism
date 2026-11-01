@@ -1,0 +1,64 @@
+{
+  "version": "0.1.29",
+  "channel": "beta candidate",
+  "local": {
+    "passed": 1207,
+    "total": 1207,
+    "suites": 48,
+    "sourceFilesUnchangedDuringValidation": true
+  },
+  "optionalityHooks": {
+    "passed": 7,
+    "total": 7,
+    "method": "Real local Input/Context/Output hooks with supplied or empty reports; not live model narration."
+  },
+  "controlledCompletion": {
+    "passed": 2,
+    "total": 2,
+    "nativeModelSemanticsTested": false
+  },
+  "native": {
+    "version": "0.1.29",
+    "playtestRun": false,
+    "automaticPathPassed": null,
+    "antiRailroadingObedienceTested": false
+  },
+  "historicalNative": {
+    "version": "0.1.28",
+    "model": "Gemma 4 31B",
+    "automaticFiveStopPathPassed": true,
+    "firstPassClean": false,
+    "note": "Predecessor pass with a recorded rejection and ordinary recovery; not a v0.1.29 native pass."
+  },
+  "panesSHA256": {
+    "library": "018ef4310e7b89bcf62530b4e758662d7775bb622320cf8fa45b92d67ad33289",
+    "input": "919212570fe3eb694587a4234efd65610594194f770888a1375dc34c4dcffc01",
+    "context": "ddd1940b23630f4c6c5e28e45b838a9d8431913210ed1174e4767848d36572b5",
+    "output": "ef28cbbc2b3351aa88400b28860b3e764fae3fa6a8dc8f23c1c6d32b2af5de3e"
+  },
+  "configuredLibrariesSHA256": {
+    "another_chance_opening": "e7f2184b25fd9a6b0334caaa15ce3a24e06a7b97b8fdd341940ada16dca07ad9",
+    "another_chance_conditions": "7d2519ac16f7025122ca1b7b73392154f9ad8660a7be93efadf517f70f225e48",
+    "objective_choices": "21f48fbf0a7ad4482ac5f31ccd0b4bfe5ff3df00c92086c12973d398456b3387",
+    "branching_dependencies": "36e7277e1a5f2c7b3d00a31ce964a78783d411bbddd1f5a031a3887ae5bb3ef0",
+    "exclusive_routes": "101c83bf32f877400ecf4dda0ca5d9c1d317351b848a0712f2840aa1016f60e6",
+    "another_chance_five_stop": "2eecdce813845048250ea3e59f3cda1636de682fa139e6e4e498b13842cc5708"
+  },
+  "distribution": {
+    "packInspectorPreviewsPassed": 7,
+    "configuredRebuildsMatched": 6,
+    "runtimeMatchesValidatedSource": true
+  },
+  "aiDungeonListingPublished": false,
+  "sourceDistribution": "GitHub public beta candidate",
+  "repositoryValidation": {
+    "focusedChecksPassed": 7,
+    "focusedChecksTotal": 7,
+    "allJavaScriptParses": 23,
+    "panesMatchRelease": true,
+    "sixConfiguredLibrariesMatchRelease": true,
+    "privateAccountReferencesExcluded": true,
+    "fullHistoricalArchiveIncluded": false,
+    "note": "The 1207-check gate is the recorded complete development release; npm test here runs the focused seven-check suite."
+  }
+}

@@ -1,0 +1,15 @@
+# exclusive_routes — Questism v0.1.29 beta
+
+A generic exhibit example with competing authored routes. Explicit player acceptance commits a route; an offer alone does not.
+
+Install this folder's library.js with the root input.js, context.js and output.js. Save all four panes and start a fresh adventure. Do not paste setup.js a second time: it is already included in the configured Library.
+
+## Included quests
+
+- Preserve the Original
+- Prepare a Working Copy
+- The Curator's Review
+
+quest_pack.json is the editable authored pack. setup.js, where supplied, contains its fresh-save settings. Run `node build_configured.cjs` from the package root after editing source packs or setup. The generated Libraries preserve the common engine.
+
+The release's 1,207 local checks cover engine and sample behavior using supplied reports. Native recognition was verified on the v0.1.28 predecessor five-stop profile with Gemma; v0.1.29 has not been rerun live, and this does not certify every sample or narrative branch on every model. Read ../TEST_EVIDENCE.json and ../KNOWN_LIMITS.md for the evidence and limits.

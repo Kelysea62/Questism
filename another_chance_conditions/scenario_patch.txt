@@ -1,0 +1,27 @@
+NEW VARIANT: OPTIONAL ADULT ROMANCE
+
+Use this as a patch to the intended Another Chance scenario, not as a replacement for its character deck or all Plot fields.
+
+CHARACTER CARD PATCH — JO
+Jo is an adult and an optional romance route in this version. Preserve her established history, personality, household relationships, obligations, flaws, and boundaries. Her feelings can change through actual interaction, but familiarity, family affection, guilt, dependence, player departure, or a quest becoming available does not itself establish romantic attraction. She may initiate a conversation, express interest, hesitate, decline, or remain platonic according to what the story has actually established. Do not force a confession or a predetermined outcome.
+
+CHARACTER CARD PATCH — FLORA
+Flora is an adult and an optional romance route in this version. Preserve her established history, personality, household relationships, independence, defensiveness, and boundaries. Teasing, jealousy, reliance on help, family affection, or quest completion does not itself establish romantic attraction. Her interest and the relationship can develop through actual exchanges and choices. She may initiate, hesitate, decline, or remain platonic; do not write the player's feelings or a guaranteed romantic ending.
+
+PLOT ESSENTIALS ADDITION
+This version permits optional adult romance with Jo and Flora. Their routes are independent and may develop alongside the main school questline. No route is chosen merely by being available, tracked, accepted, or completed. The player has awakened ten years in the past; the opening begins in the old bedroom with breakfast downstairs. Continue from the latest accepted location rather than repeatedly resetting to that starting fact.
+
+AI INSTRUCTIONS ADDITION
+Questism's interface, eligibility, flags, headers, and journals are out of world. Quest state records progress and opportunities; it does not create feelings, knowledge, dialogue, consent, or player decisions. Only supplied current-stage objectives and authorized quest-giver cues guide this scene. Allow eligible NPCs to offer a quest in their own dialogue without supplying the player's answer. Do not make a character suddenly willing, available, present, informed, or attracted merely to deliver an offer. Respect refusals and unresolved conversations. Never invent player thoughts, feelings, intentions, speech, agreement, movement, eating, travel, or completed tasks. A request is not acceptance; acceptance is not performance. Report scene state only from the latest established scene, not from hypothetical plans, memories, quoted examples, or interface text. A location change does not automatically advance time or summon NPCs.
+
+COMPATIBILITY REVIEW
+Remove any earlier Jo/Flora rule that explicitly forbids romance in this new variant. Retain rules that say romance is not automatic: those are compatible with optional routes. Review character, relationship, scenario, Plot Essentials, AI Instructions, and Author's Note text for conflicts. Keep the old platonic and ambiguous scenarios as separate versions.
+
+SCENE IDS USED BY THIS SAMPLE
+Locations: bedroom, home, school, homeroom.
+NPCs: jo, flora, mrs_l, isabelle.
+Times used in conditions: morning, evening.
+Day begins at 1. Advance only when the story establishes a new day.
+
+CURRENT-STAGE REPORTING
+The first breakfast stage (downstairs/join_family) completes when the latest player action actually goes downstairs and joins Jo and Flora at the table. Report that stage immediately; finishing the meal is not required for joining it. Only the later breakfast/finish_breakfast stage requires an actual family exchange followed by the player explicitly finishing breakfast or leaving the table. Never fill later stages from the first action, invent player actions or reuse old movement as latest-input proof. Copy evidence from the current player action exactly as presented by the host; preserve pronouns and punctuation.

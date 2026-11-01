@@ -1,0 +1,59 @@
+{
+  "quests": [
+    {
+      "id": "missing_ledger",
+      "title": "The Missing Ledger",
+      "description": "The archivist has asked for help finding a misplaced ledger. This is an original demonstration quest, not a quest from Another Chance.",
+      "requires": [],
+      "requiresAny": [],
+      "rewards": "The archivist agrees to introduce you to the archive staff. No inventory reward is granted by the script.",
+      "stages": [
+        {
+          "id": "inquiry",
+          "title": "Ask the archivist",
+          "description": "Find out where the ledger was last seen.",
+          "objectives": [{"id": "ask", "text": "Ask the archivist where the ledger was last seen.", "target": 1}]
+        },
+        {
+          "id": "search",
+          "title": "Search the reading room",
+          "description": "Look for the ledger in the location the archivist identified.",
+          "objectives": [{"id": "find", "text": "Find the missing ledger.", "target": 1}]
+        },
+        {
+          "id": "return",
+          "title": "Return the ledger",
+          "description": "Bring the recovered ledger back to the archivist.",
+          "objectives": [{"id": "deliver", "text": "Hand the ledger to the archivist.", "target": 1}]
+        }
+      ]
+    },
+    {
+      "id": "archive_errand",
+      "title": "An Archive Errand",
+      "description": "After the ledger is returned, the archivist can offer a small sorting job.",
+      "requires": ["missing_ledger"],
+      "requiresAny": [],
+      "rewards": "An established favor from the archive staff.",
+      "stages": [{"id": "sort", "title": "Sort the records", "objectives": [{"id": "boxes", "text": "Sort a box of records into the correct shelves.", "target": 3}]}]
+    },
+    {
+      "id": "courier_favor",
+      "title": "The Courier's Favor",
+      "description": "A courier in the square has a parcel to deliver. This independent demonstration branch is available from the start.",
+      "requires": [],
+      "requiresAny": [],
+      "rewards": "The courier's promised introduction, if honored in the story.",
+      "stages": [{"id": "delivery", "title": "Deliver the parcel", "objectives": [{"id": "parcel", "text": "Deliver the courier's parcel to the named recipient.", "target": 1}]}]
+    },
+    {
+      "id": "restricted_archive",
+      "title": "Beyond the Public Shelves",
+      "description": "The next archive quest requires the ledger to be returned and either the archive errand or the courier's favor to be completed.",
+      "requires": ["missing_ledger"],
+      "requiresAny": ["archive_errand", "courier_favor"],
+      "rewards": "Reference only: any access must still be established in the story.",
+      "stages": [{"id": "request", "title": "Request an appointment", "objectives": [{"id": "appointment", "text": "Arrange an appointment with the senior archivist.", "target": 1}]}]
+    }
+  ]
+}

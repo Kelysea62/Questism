@@ -1,0 +1,3 @@
+
+CURRENT-STAGE REPORTING
+The first breakfast stage (downstairs/join_family) completes when the latest player action actually goes downstairs and joins Jo and Flora at the table. Report that stage immediately; finishing the meal is not required for joining it. Only the later breakfast/finish_breakfast stage requires an actual family exchange followed by the player explicitly finishing breakfast or leaving the table. Never fill later stages from the first action, invent player actions or reuse old movement as latest-input proof. Copy evidence from the current player action exactly as presented by the host; preserve pronouns and punctuation.

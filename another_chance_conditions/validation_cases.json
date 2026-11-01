@@ -1,0 +1,20 @@
+{
+  "kind": "manual_playtest_checklist",
+  "canonical_game_transcription": false,
+  "cases": [
+    {"id": "opening", "scene": "Fresh adventure upstairs", "expected": "Breakfast active; school, guide and household quests not readable. No NPC performs player movement."},
+    {"id": "breakfast_pacing", "action": "Greet the family without ending the meal", "expected": "Breakfast remains active. A greeting does not finish the meal or trigger school travel."},
+    {"id": "school_unlock", "action": "Finish the family conversation, explicitly finish breakfast and leave the table", "expected": "After accepted completion, school assigned. No invented arrival, exploration or homeroom progress."},
+    {"id": "milestone_overlap", "scene": "School active in introduction stage; homeroom milestone complete; location homeroom; Mrs. L present", "expected": "Guide quest eligible although school is unfinished. Mrs. L may introduce Isabelle and offer the tour; offer creates availability, not acceptance."},
+    {"id": "missing_giver", "scene": "Homeroom milestone complete but Mrs. L absent", "expected": "No guide offer cue or delivery is accepted."},
+    {"id": "wrong_location", "scene": "Mrs. L present in the courtyard, homeroom milestone complete", "expected": "Guide quest remains ineligible for delivery because the required location is homeroom."},
+    {"id": "acceptance", "action": "Explicitly agree to Mrs. L's existing tour request", "expected": "Guide quest becomes active with player-sourced acceptance evidence. A narrator-written agreement cannot accept it."},
+    {"id": "promise_not_tour", "action": "Promise to show Isabelle around without starting", "expected": "No tour progress. Acceptance alone does not begin or complete the tour."},
+    {"id": "evening_conversations", "scene": "Breakfast complete, home in evening, Jo and Flora present, both route flags true", "expected": "Both household quests eligible; each offer waits for its NPC's actual invitation. No automatic affection or player acceptance."},
+    {"id": "independent_route_switches", "scene": "Same evening with jo_romance_enabled false and flora_romance_enabled true", "expected": "Jo's undelivered quest remains locked; Flora's may be offered. School/tour progress is unchanged."},
+    {"id": "concurrent_tracking", "action": "Accept both genuine household invitations while another quest remains active", "expected": "All active quests retain independent counts and appear in the multi-quest header/context as space permits."},
+    {"id": "refusal_is_response", "scene": "A household conversation occurs and the NPC declines romance", "expected": "The conversation can complete without declaring romantic success; the refusal remains in the story and progress record."},
+    {"id": "save_reload", "action": "Reload after an accepted scene, offer and conversation progress", "expected": "Flags, scene, availability, active stages and counts persist. The same offer is not issued as a fresh quest."},
+    {"id": "undo", "action": "Undo an accepted conversation-completion transaction", "expected": "Its stage count and conversation-complete flag roll back together; unrelated questlines remain intact."}
+  ]
+}

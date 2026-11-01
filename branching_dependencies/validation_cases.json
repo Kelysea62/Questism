@@ -1,0 +1,23 @@
+{
+  "version": "0.1.18",
+  "method": "Actual local Input/Context/Output hooks with supplied reports; no website or model",
+  "trace": [
+    "Player explicitly starts the available registration goal",
+    "Actual NPC registration confirmation completes that goal",
+    "Appointment becomes eligible, with no implied offer or acceptance",
+    "Actual coordinator offer -> explicit later player acceptance -> actual later appointment confirmation",
+    "Service becomes eligible -> actual offer -> explicit player acceptance",
+    "Two distinct actual player sorting actions record east_stack then west_stack",
+    "Completion and reload preserve counts and lifecycle records"
+  ],
+  "negativeCases": [
+    "An OR cycle without an independent structural escape still rejects",
+    "An independent unrelated quest cannot rescue a disconnected deadlock",
+    "Structural analysis alone changes no prerequisite counts, flags or scene",
+    "Missing references and milestone names still reject atomically",
+    "An unaccepted seed cannot progress",
+    "Source edits, Retry and Undo remove unsupported completion and dependent unlocks",
+    "Abandoning a seed does not satisfy a completion prerequisite"
+  ],
+  "categoryCoverage": "Category metadata is display-only; hidden/eligible categories are absent from player views, and creator-only exports may show the full roster."
+}

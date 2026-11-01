@@ -1,0 +1,11 @@
+{
+  "name": "questism",
+  "version": "0.1.29",
+  "private": true,
+  "description": "A reusable, configurable quest engine for AI Dungeon",
+  "scripts": {
+    "test": "node test_v0129_optionality.cjs",
+    "build:samples": "node build_configured.cjs",
+    "validate:demo": "node inspect_pack.cjs demo_quest_pack.json"
+  }
+}

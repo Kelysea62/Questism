@@ -1,0 +1,143 @@
+{
+  "basis": "User-provided opening outline; local test titles and IDs; no verified canonical quest transcription.",
+  "setup": {
+    "newQuests": "off",
+    "progression": "auto",
+    "header": true,
+    "autoAssignedFirstQuest": "ac_breakfast_again"
+  },
+  "expectedInitial": {
+    "active": "ac_breakfast_again",
+    "stage": "downstairs",
+    "locked": [
+      "ac_back_to_school",
+      "ac_isabelle_first_day"
+    ]
+  },
+  "ordinaryPlaySequence": [
+    {
+      "case": "breakfast_downstairs",
+      "playerAction": "I go downstairs and join my family at the breakfast table.",
+      "mode": "Do",
+      "expectedAfterValidatedAcceptance": {
+        "quest": "ac_breakfast_again",
+        "stage": "breakfast"
+      },
+      "requiredEvidenceSource": "Exact quote from the latest player action."
+    },
+    {
+      "case": "breakfast_scene",
+      "playerAction": "I talk with my family over breakfast. After our conversation, I finish eating, put my dishes aside, and leave the breakfast table.",
+      "mode": "Do",
+      "expectedAfterValidatedAcceptance": {
+        "completed": "ac_breakfast_again",
+        "active": "ac_back_to_school",
+        "stage": "arrival"
+      },
+      "requiredEvidenceSource": "Exact quote from the latest player action."
+    },
+    {
+      "case": "school_arrival",
+      "playerAction": "I travel to school, reach the entrance, and go inside.",
+      "mode": "Do",
+      "expectedAfterValidatedAcceptance": {
+        "quest": "ac_back_to_school",
+        "stage": "explore"
+      },
+      "requiredEvidenceSource": "Exact quote from the latest player action."
+    },
+    {
+      "case": "school_exploration",
+      "playerAction": "I walk through an accessible school area and spend some time looking around before homeroom.",
+      "mode": "Do",
+      "expectedAfterValidatedAcceptance": {
+        "quest": "ac_back_to_school",
+        "stage": "homeroom"
+      },
+      "requiredEvidenceSource": "Exact quote from the latest player action."
+    },
+    {
+      "case": "school_homeroom",
+      "playerAction": "I enter Mrs. L's homeroom classroom and join the class.",
+      "mode": "Do",
+      "expectedAfterValidatedAcceptance": {
+        "completed": "ac_back_to_school",
+        "active": "ac_isabelle_first_day",
+        "stage": "introduction"
+      },
+      "requiredEvidenceSource": "Exact quote from the latest player action."
+    },
+    {
+      "case": "isabelle_introduction",
+      "playerAction": "I settle in for homeroom and listen as Mrs. L introduces the new student.",
+      "mode": "Do",
+      "requiresObservedNarration": "Isabelle is actually introduced as the new student.",
+      "expectedAfterValidatedAcceptance": {
+        "quest": "ac_isabelle_first_day",
+        "stage": "guide_assignment"
+      },
+      "requiredEvidenceSource": "An exact quote from the actual NPC event in the exchange; a player expectation alone is insufficient."
+    },
+    {
+      "case": "isabelle_assignment",
+      "playerAction": "I wait as Mrs. L explains who will show Isabelle around the school.",
+      "mode": "Do",
+      "requiresObservedNarration": "Mrs. L actually asks or appoints the player to guide Isabelle.",
+      "expectedAfterValidatedAcceptance": {
+        "quest": "ac_isabelle_first_day",
+        "stage": "tour"
+      },
+      "requiredEvidenceSource": "An exact quote from the actual NPC event in the exchange; a player expectation alone is insufficient."
+    },
+    {
+      "case": "isabelle_tour",
+      "playerAction": "With Isabelle accompanying me, I show her through two distinct school areas, explain how to find her classes, then bring our short tour to an end.",
+      "mode": "Do",
+      "requiresObservedNarration": "An actual short tour through two distinct school areas with Isabelle present, not a plan or one stop.",
+      "expectedAfterValidatedAcceptance": {
+        "completed": "ac_isabelle_first_day",
+        "active": null
+      },
+      "requiredEvidenceSource": "Exact quote from the latest player action."
+    }
+  ],
+  "negativeChecks": [
+    {
+      "case": "greeting_is_not_breakfast_complete",
+      "when": "ac_breakfast_again/breakfast",
+      "playerAction": "I say good morning to my family.",
+      "expected": "Stay in the breakfast stage. A greeting does not choose to end breakfast. Narration that prematurely ends the meal cannot supply the required latest-player-action evidence."
+    },
+    {
+      "case": "travel_is_not_arrival",
+      "when": "ac_back_to_school/arrival",
+      "playerAction": "I plan my route to school.",
+      "expected": "Do not count arrival."
+    },
+    {
+      "case": "future_student_not_yet_revealed",
+      "when": "Before ac_back_to_school completes",
+      "expected": "No Isabelle quest details in the readable quest header or unlocked quest card."
+    },
+    {
+      "case": "tour_promise_is_not_tour",
+      "when": "ac_isabelle_first_day/tour",
+      "playerAction": "I promise to show Isabelle around later.",
+      "expected": "Do not complete the tour or move the player."
+    },
+    {
+      "case": "refusal_is_not_agreement",
+      "when": "Mrs. L assigns the guide duty",
+      "playerAction": "I tell Mrs. L that I will not guide Isabelle.",
+      "expected": "Do not invent player acceptance or a completed tour. The teacher assignment may be recorded as an NPC event; the tour remains incomplete."
+    },
+    {
+      "case": "narrator_ends_breakfast_without_player_choice",
+      "when": "ac_breakfast_again/breakfast",
+      "playerAction": "I ask my family how their morning is going.",
+      "invalidProofExample": "AI narration alone says that breakfast is over and the player leaves for school.",
+      "expected": "Reject progress supported only by narrator-written endings; keep the school quest locked. If the model misclassifies the player question itself as completion, record a semantic failure rather than claiming the provenance guard proved meaning."
+    }
+  ],
+  "validationNote": "Expected transitions require a valid model progress report, accepted story history, and actual objective fulfillment. Six player-controlled objectives require an exact latest-player-action quote. The two NPC-event objectives use exchange evidence so an actual introduction or assignment can be quoted from narration. The player-source guard proves provenance, not the semantic meaning of every quoted action. Injected reports belong only to separately labeled runtime tests."
+}
